@@ -2,6 +2,16 @@ import React from 'react'
 import './header.css';
 import people from '../../assets/people.png';
 import ai from '../../assets/ai.png';
+import VanillaTilt from 'vanilla-tilt';
+
+VanillaTilt.init(document.querySelector("#move_img"), {
+  max: 10,
+  speed: 100,
+  perspective: 1000,
+  easing: "cubic-bezier(.03,.98,.52,.99)",
+  transition: true,
+  "mouse-event-element":  ".gpt3__header"
+});
 
 const Header = () => {
   return (
@@ -20,7 +30,7 @@ const Header = () => {
         </div>
       </div>
       <div className='gpt3__header-image'>
-        <img src={ai} alt="ai" />
+        <img src={ai} alt="ai" id='move_img'/>
       </div>
     </div>
   )
